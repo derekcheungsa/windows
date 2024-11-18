@@ -1,0 +1,14 @@
+[build]
+builder = "dockerfile"
+
+[deploy]
+startCommand = "start"
+healthcheckPath = "/"
+healthcheckTimeout = 100
+restartPolicyType = "always"
+
+[deploy.capabilities]
+NET_ADMIN = true
+
+[deploy.devices]
+"/dev/net/tun" = "/dev/net/tun"
